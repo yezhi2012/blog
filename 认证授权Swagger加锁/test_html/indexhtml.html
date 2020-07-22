@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试</title>
+	</head>
+	<body style="background-color: beige;">
+		<div style="border: black; text-align: center;">
+			<h3>添加电影</h3>
+			<tr>
+				<td>编号id：</td>
+				<th><input type="text" id="id" value="5" /></th>
+			</tr>
+			<tr>
+				<td>电影名称：</td>
+				<th><input type="text" id="Name" value="夏洛特烦恼" /></th>
+			</tr>
+			<tr>
+				<td>电影类型：</td>
+				<th><input type="text" id="Type" value="喜剧" /></th>
+			</tr>
+		</div>
+		<div style=" text-align: center;">
+			<button id="btnadd" style="width: 60px;height:25px; margin-top: 25px;">添加</button>
+		</div>
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="jquery.cookie.js"></script>
+		<script>
+			$('#btnadd').click(function(){
+				//先获取token
+				$.ajax({
+					url:'http://localhost:10493/api/Auth/GetToken',
+					type:'Get',
+					success:function(data){
+						console.info(data);
+						//保存cookie到浏览器,设置过期时间
+						var strsec = getsec("d5");
+						var exp = new Date();
+						exp.setTime(exp.getTime() + strsec*1);
+						$.cookie("ceshi_token", data, { expires: exp, path: '/' });
+					},
+					error:function(){
+						
+					}
+				});
+				$.ajax({
+					url:'http://localhost:10493/api/Movie/AddMovie',
+					type:'Get',
+					headers: {
+					           'Authorization': $.cookie('ceshi_token'),
+					          },
+					data:{
+						"id":5,
+						"Name":"ssss",
+						"Type":"ss",
+					},
+					success:function(data){
+						alert(data);
+					}
+				})
+				
+			})
+			function getsec(str){
+			    //alert(str);
+			    var str1=str.substring(1,str.length)*1; 
+			    var str2=str.substring(0,1); 
+			    if (str2=="s"){
+			    return str1*1000;
+			    }else if (str2=="h"){
+			    return str1*60*60*1000;
+			    }else if (str2=="d"){
+			    return str1*24*60*60*1000;
+			    }
+			}
+		</script>
+	</body>
+</html>

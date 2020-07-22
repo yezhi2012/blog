@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XUnit.Core</name>
+    </assembly>
+    <members>
+        <member name="T:XUnit.Core.Controllers.MovieController">
+            <summary>
+            电影管理
+            </summary>
+        </member>
+        <member name="M:XUnit.Core.Controllers.MovieController.GetAllMovies">
+            <summary>
+            获取所有的电影
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XUnit.Core.Controllers.MovieController.GetMovieModel(System.Int32)">
+            <summary>
+            根据影视ID获取对应的电影
+            </summary>
+            <param name="id">影视ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:XUnit.Core.Controllers.MovieController.AddMovie(System.Int32,System.String,System.String)">
+            <summary>
+            新增电影
+            </summary>
+            <param name="id">影视ID</param>
+            <param name="Name">电影名称</param>
+            <param name="Type">电影类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XUnit.Core.Controllers.SwaggerController.ExportWord(System.String,System.String)">
+            <summary>
+            导出文件
+            </summary>
+            <param name="type">文件类型</param>
+            <param name="version">版本号V1</param>
+            <returns></returns>
+        </member>
+        <member name="T:XUnit.Core.Controllers.WeatherForecastController">
+            <summary>
+            这是一个天气预报
+            </summary>
+        </member>
+        <member name="M:XUnit.Core.Controllers.WeatherForecastController.Get">
+            <summary>
+            看这 这是一个API接口注释的地方
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XUnit.Core.Controllers.WeatherForecastController.Get(System.Int32)">
+            <summary>
+            values带id参数的get
+            </summary>
+            <param name="id"></param>
+            <response code="201">返回value字符串</response>
+            <response code="400">如果id为空</response>  
+            <returns></returns>
+        </member>
+        <member name="M:XUnit.Core.Controllers.WeatherForecastController.Post(XUnit.Core.Model.MovieModel)">
+            <summary>
+            post方式提交电影名称
+            </summary>
+            <param name="movie"></param>
+        </member>
+        <member name="M:XUnit.Core.Helper.ByteHelper.BytesToStream(System.Byte[])">
+            将 byte[] 转成 Stream
+        </member>
+        <member name="M:XUnit.Core.Helper.HtmlHelper.GeneritorSwaggerHtml(System.String,Microsoft.OpenApi.Models.OpenApiDocument)">
+            <summary>
+            将数据遍历静态页面中
+            </summary>
+            <param name="templatePath">静态页面地址</param>
+            <param name="model">获取到的文件数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XUnit.Core.Helper.SpireDocHelper.SwaggerConversHtml(System.String,System.String,System.String@)">
+            <summary>
+            静态页面转文件
+            </summary>
+            <param name="html">静态页面html</param>
+            <param name="type">文件类型</param>
+            <param name="contenttype">上下文类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:XUnit.Core.Model.MovieModel">
+            <summary>
+            这是电影实体类
+            </summary>
+        </member>
+        <member name="P:XUnit.Core.Model.MovieModel.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:XUnit.Core.Model.MovieModel.Name">
+            <summary>
+            影片名称
+            </summary>
+        </member>
+        <member name="P:XUnit.Core.Model.MovieModel.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+    </members>
+</doc>
